@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Rattel Ayah Academy</title>
+<link rel="icon" type="image/png" href="/assets/images/site/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Admin/admin.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+<!-- ============ LOGIN GATE ============ -->
+<div class="login-gate" id="login-gate" style="display:flex;">
+  <h1>Rattel Ayah <span style="color:#8BC34A">Academy</span> — Admin</h1>
+  <p>Sign in with your admin account to manage the website.</p>
+  <form id="login-form" style="width:100%; max-width:320px; text-align:left;">
+    <label>Email</label>
+    <input type="email" id="login-email" required autocomplete="username">
+    <label>Password</label>
+    <input type="password" id="login-password" required autocomplete="current-password">
+    <button type="submit" class="btn btn-primary" id="login-submit" style="width:100%; justify-content:center; margin-top:20px;"><i data-lucide="log-in"></i> Sign In</button>
+  </form>
+  <p id="login-error" style="color:#D9534F; display:none;"></p>
+</div>
+
+<!-- ============ ADMIN SHELL ============ -->
+<div class="admin-shell" id="admin-shell" style="display:none;">
+
+  <aside class="admin-sidebar">
+    <div class="admin-logo">Rattel Ayah <span>Admin</span></div>
+    <nav class="admin-nav" id="admin-nav">
+      <button data-panel="dashboard" class="active"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></button>
+      <button data-panel="hero"><i data-lucide="image"></i><span>Hero</span></button>
+      <button data-panel="courses"><i data-lucide="book-open"></i><span>Courses</span></button>
+      <button data-panel="teachers"><i data-lucide="users"></i><span>Teachers</span></button>
+      <button data-panel="faqs"><i data-lucide="help-circle"></i><span>FAQ</span></button>
+      <button data-panel="statistics"><i data-lucide="bar-chart-3"></i><span>Statistics</span></button>
+      <button data-panel="testimonials"><i data-lucide="message-square-quote"></i><span>Testimonials</span></button>
+      <button data-panel="contact"><i data-lucide="phone"></i><span>Contact</span></button>
+      <button data-panel="general"><i data-lucide="file-text"></i><span>General Content</span></button>
+      <button data-panel="footer"><i data-lucide="layout-panel-top"></i><span>Footer</span></button>
+    </nav>
+    <div class="admin-user">
+      Signed in as <strong id="admin-username">Local Admin</strong>
+      <button id="logout-btn"><i data-lucide="log-out"></i><span>Sign out</span></button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+
+    <div class="admin-header">
+      <div>
+        <h1 id="panel-title">Dashboard</h1>
+        <p id="panel-subtitle">Overview of your website content.</p>
+      </div>
+      <button class="btn btn-outline btn-sm" id="reload-btn"><i data-lucide="refresh-cw"></i> Reload Data</button>
+    </div>
+
+    <!-- Dashboard -->
+    <section class="panel active" id="panel-dashboard">
+      <div class="stat-grid" id="dashboard-stats"><div class="empty-state">Loading…</div></div>
+      <div class="card dash-tip">
+        <div class="dash-tip-ic"><i data-lucide="lightbulb"></i></div>
+        <div>
+          <strong>How this works</strong>
+          <p>Edit content in any section, then press <strong>Save Changes</strong>. Every change is written straight to the database and shows up on the live site right away.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="panel" id="panel-hero">
+      <div class="card" id="hero-form"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="hero"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Courses -->
+    <section class="panel" id="panel-courses">
+      <div class="toolbar"><span></span><button class="btn btn-primary btn-sm" data-add="courses"><i data-lucide="plus"></i> Add Course</button></div>
+      <div class="item-list" id="courses-list"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="courses"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Teachers -->
+    <section class="panel" id="panel-teachers">
+      <div class="toolbar"><span></span><button class="btn btn-primary btn-sm" data-add="teachers"><i data-lucide="plus"></i> Add Teacher</button></div>
+      <div class="item-list" id="teachers-list"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="teachers"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panel" id="panel-faqs">
+      <div class="toolbar"><span></span><button class="btn btn-primary btn-sm" data-add="faqs"><i data-lucide="plus"></i> Add FAQ</button></div>
+      <div class="item-list" id="faqs-list"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="faqs"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="panel" id="panel-statistics">
+      <div class="toolbar"><span></span><button class="btn btn-primary btn-sm" data-add="statistics"><i data-lucide="plus"></i> Add Statistic</button></div>
+      <div class="item-list" id="statistics-list"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="statistics"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="panel" id="panel-testimonials">
+      <div class="toolbar"><span></span><button class="btn btn-primary btn-sm" data-add="testimonials"><i data-lucide="plus"></i> Add Testimonial</button></div>
+      <div class="item-list" id="testimonials-list"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="testimonials"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="panel" id="panel-contact">
+      <div class="card" id="contact-form"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="contact"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- General Content -->
+    <section class="panel" id="panel-general">
+      <div class="card" id="general-form"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="general"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+    <!-- Footer -->
+    <section class="panel" id="panel-footer">
+      <div class="card" id="footer-form"></div>
+      <div class="save-bar"><button class="btn btn-primary" data-save="footer"><i data-lucide="save"></i> Save Changes</button></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Generic edit modal for list items -->
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal" style="max-width:560px;">
+    <h3 id="edit-modal-title">Edit item</h3>
+    <div id="edit-modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="edit-modal-cancel"><i data-lucide="x"></i> Cancel</button>
+      <button class="btn btn-primary" id="edit-modal-save"><i data-lucide="save"></i> Save item</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete confirmation modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal">
+    <h3>Delete this item?</h3>
+    <p id="confirm-modal-text">Are you sure you want to delete this? This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="confirm-modal-cancel"><i data-lucide="x"></i> Cancel</button>
+      <button class="btn btn-danger" id="confirm-modal-ok"><i data-lucide="trash-2"></i> Delete</button>
+    </div>
+  </div>
+</div>
+
+<div id="status-bar"></div>
+
+<script src="/assets/supabase-config.js"></script>
+<script src="/Admin/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rattel Ayah Academy — Learn Qur'an & Arabic from Expert Teachers</title>
+<meta name="description" content="Learn Qur'an recitation, Tajweed, Arabic language, and Islamic studies with certified native Arabic teachers from Al-Azhar University — from anywhere in the world.">
+<link rel="icon" type="image/png" href="/assets/images/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=Cairo:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Home/style.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header>
+  <nav>
+    <a href="#top" class="nav-logo" style="display:flex;align-items:center;gap:8px;font-family:'Playfair Display',serif;font-weight:700;">
+      <img src="/assets/images/site/logo.png" alt="Rattel Ayah Academy" style="height:32px;width:auto;" onerror="this.style.display='none'">
+      Rattel Ayah
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#teachers">Teachers</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQs</a>
+    </div>
+    <div class="nav-cta">
+      <a class="icon-btn" id="nav-whatsapp" href="https://wa.me/201093925820" target="_blank" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.34 4.94L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.11h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.18 8.18 0 0 1-1.26-4.35c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.15 8.15 0 0 1 2.41 5.79c0 4.53-3.68 8.2-8.23 8.2z"/></svg>
+      </a>
+      <a class="btn btn-primary btn-sm" href="#courses">Start Learning</a>
+      <div class="burger icon-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</div>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+    <div class="islamic-pattern"></div>
+
+    <svg class="hero-deco leaf-tl" viewBox="0 0 60 60" fill="none">
+        <path d="M30 6C18 10 10 22 12 36c10 4 24-2 30-14C48 12 42 8 30 6Z" fill="#8BC34A" opacity=".5"/>
+        <path d="M18 40 L42 14" stroke="#2F7D32" stroke-width="1.5" opacity=".4"/>
+    </svg>
+    <svg class="hero-deco lantern-tr" viewBox="0 0 50 80" fill="none">
+        <path d="M25 2v10" stroke="#D4AF37" stroke-width="2"/>
+        <rect x="12" y="12" width="26" height="8" rx="3" fill="#D4AF37"/>
+        <path d="M14 20Q25 30 36 20L33 54Q25 60 17 54Z" fill="#2F7D32"/>
+        <rect x="10" y="52" width="30" height="7" rx="3" fill="#D4AF37"/>
+        <circle cx="25" cy="36" r="5" fill="#FFF3C4"/>
+    </svg>
+
+    <div class="container hero-grid">
+        <!-- LEFT CONTENT (populated by data-loader.js from site_content.hero, falls back to this markup) -->
+        <div class="hero-content reveal in" id="hero-content">
+            <div class="hero-badge"><span class="dot">✓</span> <span id="hero-badge-text">Al-Azhar Certified Teachers</span></div>
+            <h1 id="hero-title">
+                Nurturing Hearts, Building a
+                <em>Strong Foundation</em>
+                in Qur'an &amp; Arabic
+            </h1>
+            <p class="lead" id="hero-description">
+                Learn Qur'an recitation, Tajweed, Arabic language,
+                and Islamic studies with certified native Arabic teachers
+                from Al-Azhar University — from anywhere in the world.
+            </p>
+            <div class="hero-actions">
+                <a href="#courses" class="btn btn-primary" id="hero-btn-primary">Start Learning Today</a>
+                <a href="https://wa.me/201093925820" target="_blank" class="btn btn-outline" id="hero-btn-secondary">Contact Us on WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="hero-visual reveal in">
+            <div class="frame">
+                <img src="/assets/images/site/hero.jpg" alt="Quran Academy" class="hero-image" id="hero-image"
+                     onerror="this.closest('.frame').style.background='linear-gradient(135deg,#2F7D32,#8BC34A)'; this.remove();">
+            </div>
+            <div class="float-card fc1">
+                <div class="fc-ic" style="background:var(--deep-green-08);color:var(--deep-green);">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div><strong id="fc1-title">Free Trial</strong><span id="fc1-sub">Class Included</span></div>
+            </div>
+            <div class="float-card fc2">
+                <div class="fc-ic" style="background:rgba(212,175,55,.15);color:var(--gold);">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.4L17.8 21 12 17.77 6.2 21l1.3-7.33L3 9.27l6.1-1.01L12 2z"/></svg>
+                </div>
+                <div><strong id="fc2-title">4.9 / 5 Rating</strong><span id="fc2-sub">1000+ Parents</span></div>
+            </div>
+            <div class="float-card fc3">
+                <div class="fc-ic" style="background:rgba(110,198,217,.18);color:#2A7A8C;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <div><strong id="fc3-title">Flexible</strong><span id="fc3-sub">Schedule Anytime</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<svg class="arabesque-divider" viewBox="0 0 1200 34" preserveAspectRatio="none"><path d="M0 17 Q30 2 60 17 T120 17 T180 17 T240 17 T300 17 T360 17 T420 17 T480 17 T540 17 T600 17 T660 17 T720 17 T780 17 T840 17 T900 17 T960 17 T1020 17 T1080 17 T1140 17 T1200 17" stroke="#2F7D32" stroke-opacity="0.15" stroke-width="2" fill="none"/></svg>
+
+<!-- ================= WHY CHOOSE ================= -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Why Rattel Ayah</div>
+      <h2>Why Choose Rattel Ayah Academy?</h2>
+      <p>We combine traditional Islamic education with modern teaching methods to give students of all ages the best learning experience.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:var(--deep-green-08);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 8-4.1V15h2V8L12 3z" fill="#2F7D32"/><path d="M6 10.8V15c0 1.8 3 3.5 6 3.5s6-1.7 6-3.5v-4.2l-6 3-6-3z" fill="#8BC34A"/></svg></div>
+        <h3>Native Arabic Teachers</h3>
+        <p>All our teachers are native Arabic speakers with years of experience teaching students worldwide.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:rgba(212,175,55,.14);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="5.5" fill="#D4AF37"/><path d="M9 12.5 6.5 21l5.5-3 5.5 3-2.5-8.5" fill="#B8912A"/><path d="M9.5 8.2l1.6 1.6 3-3.2" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <h3>Al‑Azhar Certified</h3>
+        <p>Our instructors are graduates of Al‑Azhar University, one of the most prestigious Islamic universities.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:rgba(110,198,217,.16);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4.5" width="18" height="16" rx="4" fill="#6EC6D9"/><rect x="3" y="8.5" width="18" height="3" fill="#2A7A8C"/><circle cx="8" cy="15" r="1.6" fill="#fff"/><circle cx="12.5" cy="15" r="1.6" fill="#fff" opacity=".7"/></svg></div>
+        <h3>Flexible Schedule</h3>
+        <p>Learn at your own pace with flexible scheduling options that fit your busy lifestyle.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:rgba(122,75,37,.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="14" height="14" rx="4" fill="#7A4B25"/><path d="M18 9.2l4-2.6v11l-4-2.6V9.2z" fill="#B87B3F"/><path d="M7 10.5l4 3.5-4 3.5V10.5z" fill="#fff"/></svg></div>
+        <h3>Live Interactive Classes</h3>
+        <p>Engage in real time with our teachers through live video sessions with personalized feedback.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:var(--deep-green-08);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#2F7D32"/><path d="M12 6.5v6l4.2 2.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
+        <h3>24/7 Support</h3>
+        <p>Our dedicated support team is always available to help with any questions or concerns.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic" style="background:rgba(110,198,217,.16);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l8 3.4v6.1c0 5-3.5 8.5-8 9.5-4.5-1-8-4.5-8-9.5V5.9l8-3.4z" fill="#2A7A8C"/><path d="M8.5 12l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <h3>Safe Learning Environment</h3>
+        <p>A secure, family‑friendly platform with both male and female teachers available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COURSES (populated by data-loader.js from `courses` table) ================= -->
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Our Courses &amp; Programs</div>
+      <h2>Learn. Understand. Grow in Faith.</h2>
+      <p>Discover our comprehensive range of Islamic education programs — designed for students of all ages and levels.</p>
+    </div>
+    <div class="course-grid" id="course-grid">
+      <!-- Fallback static cards shown until Supabase data loads (or if it's unavailable) -->
+      <div class="course-card featured reveal">
+        <span class="featured-tag">Hifz</span>
+        <div class="course-media"><img src="/assets/images/courses/quran-memorization.jpg" alt="Qur'an Memorization"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">All Levels</span><span class="tag type">1‑on‑1</span></div></div>
+          <div class="ar-title">حفظ القرآن</div>
+          <h3>Qur'an Memorization (Hifz)</h3>
+          <p class="desc">Memorize the Holy Qur'an with proper pronunciation and understanding, under expert guidance.</p>
+          <div class="course-meta"><span>⏱ 2–4 years</span><span>📅 5x/week</span></div>
+          <div class="course-bottom"><div class="price"><span class="old">$149</span><span class="new">$99</span><span class="per">/mo</span></div><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/basic-tajweed.jpg" alt="Basic Tajweed"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">Beginner</span><span class="tag type">Group</span></div></div>
+          <div class="ar-title">التجويد الأساسي</div>
+          <h3>Basic Tajweed</h3>
+          <p class="desc">Master the rules of Tajweed and perfect your Qur'an recitation with detailed phonetic training.</p>
+          <div class="course-meta"><span>⏱ 3–6 mo</span><span>📅 3x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/arabic-language.jpg" alt="Arabic Language"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">Beginner</span><span class="tag type">1‑on‑1</span></div></div>
+          <div class="ar-title">اللغة العربية</div>
+          <h3>Arabic Language</h3>
+          <p class="desc">Learn to read, write, and speak Arabic from native-speaking instructors.</p>
+          <div class="course-meta"><span>⏱ 6–12 mo</span><span>📅 3x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/tafseer-classes.jpg" alt="Tafseer Classes"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">Advanced</span><span class="tag type">Group</span></div></div>
+          <div class="ar-title">دروس التفسير</div>
+          <h3>Tafseer Classes</h3>
+          <p class="desc">Deepen your understanding of the Qur'an's meaning and context.</p>
+          <div class="course-meta"><span>⏱ 6 mo</span><span>📅 2x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/names-of-allah.jpg" alt="Names of Allah"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">All Levels</span><span class="tag type">Group</span></div></div>
+          <div class="ar-title">أسماء الله الحسنى</div>
+          <h3>Names of Allah</h3>
+          <p class="desc">Study the 99 Names of Allah and their meanings.</p>
+          <div class="course-meta"><span>⏱ 2 mo</span><span>📅 2x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/islamic-studies.jpg" alt="Islamic Studies"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">All Levels</span><span class="tag type">Group</span></div></div>
+          <div class="ar-title">الدراسات الإسلامية</div>
+          <h3>Islamic Studies</h3>
+          <p class="desc">A well-rounded introduction to Seerah, Hadith, and Fiqh.</p>
+          <div class="course-meta"><span>⏱ 6–12 mo</span><span>📅 2x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+      <div class="course-card reveal">
+        <div class="course-media"><img src="/assets/images/courses/advanced-tajweed.jpg" alt="Advanced Tajweed"></div>
+        <div class="course-content">
+          <div class="course-top"><div class="tags"><span class="tag level">Advanced</span><span class="tag type">1‑on‑1</span></div></div>
+          <div class="ar-title">التجويد المتقدم</div>
+          <h3>Advanced Tajweed</h3>
+          <p class="desc">Refine advanced Tajweed rules with focused 1-on-1 coaching.</p>
+          <div class="course-meta"><span>⏱ 3–6 mo</span><span>📅 3x/week</span></div>
+          <div class="course-bottom"><a class="details-link" href="#contact">View Details →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="about">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Getting Started</div>
+      <h2>How It Works</h2>
+      <p>Four simple steps between your family and a lifelong relationship with the Qur'an.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><h3>Choose Your Course</h3><p>Pick the program that matches your child's age, level, and goals.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h3>Meet Your Teacher</h3><p>Get matched with a certified Al‑Azhar teacher in a free trial class.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h3>Start Online Classes</h3><p>Join live 1‑on‑1 or group sessions from the comfort of home.</p></div>
+      <div class="step reveal"><div class="step-num">4</div><h3>Grow Your Qur'an Journey</h3><p>Track progress with regular parent updates and milestone reviews.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEACHERS (populated by data-loader.js from `teachers` table) ================= -->
+<section class="teachers" id="teachers">
+    <div class="container">
+        <div class="section-head center reveal">
+            <div class="eyebrow">Meet Our Teachers</div>
+            <h2>Learn from Certified Al-Azhar Educators</h2>
+            <p>Passionate native Arabic teachers dedicated to helping students master the Qur'an, Arabic language, and Islamic Studies with confidence and excellence.</p>
+        </div>
+        <div class="teacher-grid" id="teacher-grid">
+            <div class="teacher-card reveal">
+                <div class="teacher-top">
+                    <div class="teacher-avatar"><img src="/assets/images/teachers/ahmed.jpg" alt="Mr. Ahmed Motawea"></div>
+                    <h3>Mr. Ahmed Motawea</h3>
+                    <div class="role">Certified Qur'an, Arabic &amp; Islamic Studies Teacher</div>
+                </div>
+                <div class="teacher-body">
+                    <div class="label">Specializations</div>
+                    <div class="teacher-specs"><span class="tag">Qur'an &amp; Tajweed</span><span class="tag">Arabic Language</span><span class="tag">Islamic Studies</span></div>
+                    <p class="teacher-quote">"Helping students confidently understand, recite, and apply Islamic knowledge in daily life."</p>
+                </div>
+            </div>
+            <div class="teacher-card reveal">
+                <div class="teacher-top">
+                    <div class="teacher-avatar"><img src="/assets/images/teachers/arwa.jpg" alt="Ms. Arwa Mohammad"></div>
+                    <h3>Ms. Arwa Mohammad</h3>
+                    <div class="role">Arabic Language Teacher</div>
+                </div>
+                <div class="teacher-body">
+                    <div class="label">Specializations</div>
+                    <div class="teacher-specs"><span class="tag">Arabic Language</span></div>
+                </div>
+            </div>
+            <div class="teacher-card reveal">
+                <div class="teacher-top">
+                    <div class="teacher-avatar"><img src="/assets/images/teachers/jomana.jpg" alt="Ms. Jomana Alaa Mohammed Ali"></div>
+                    <h3>Ms. Jomana Alaa Mohammed Ali</h3>
+                    <div class="role">Islamic Studies Teacher</div>
+                </div>
+                <div class="teacher-body">
+                    <div class="label">Specializations</div>
+                    <div class="teacher-specs"><span class="tag">Islamic Studies</span><span class="tag">Tafseer</span></div>
+                </div>
+            </div>
+            <div class="teacher-card reveal">
+                <div class="teacher-top">
+                    <div class="teacher-avatar"><img src="/assets/images/teachers/sohaila.png" alt="Ms. Sohaila Mohamed"></div>
+                    <h3>Ms. Sohaila Mohamed</h3>
+                    <div class="role">Qur'an Teacher</div>
+                </div>
+                <div class="teacher-body">
+                    <div class="label">Specializations</div>
+                    <div class="teacher-specs"><span class="tag">Qur'an Memorization</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= STATS BAND (populated by data-loader.js from `statistics` table) ================= -->
+<section class="stats-band">
+  <div class="container stats-grid" id="stats-grid">
+    <div class="reveal"><strong>1000+</strong><span>STUDENTS</span></div>
+    <div class="reveal"><strong>50+</strong><span>TEACHERS</span></div>
+    <div class="reveal"><strong>4.9/5</strong><span>RATING</span></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS (populated by data-loader.js from `testimonials` table) ================= -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Testimonials</div>
+      <h2>What Our Students Say</h2>
+      <p>Building a strong Muslim community, one student at a time — hear from families who've experienced the Rattel Ayah difference.</p>
+    </div>
+    <div class="testi-grid" id="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p>Thank you for an amazing teacher — we are so happy, may Allah bless you all. The teacher is fantastic and the academy is doing a great job.</p>
+        <div class="testi-who"><div class="testi-avatar" style="background:#2F7D32;">F</div><div><strong>Fatima</strong><span>Parent</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p>My children and I started learning Qur'an and Arabic a few months ago and we're really impressed with the constant professionalism.</p>
+        <div class="testi-who"><div class="testi-avatar" style="background:#7A4B25;">A</div><div><strong>Abdullah</strong><span>Father</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p>I've improved my Qur'an recitation and Tajweed skills tremendously. The professional teachers have played a pivotal role in my journey.</p>
+        <div class="testi-who"><div class="testi-avatar" style="background:#6EC6D9;">A</div><div><strong>Aisha</strong><span>Student</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ (populated by data-loader.js from `faqs` table) ================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">FAQs</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before starting your family's Qur'an journey.</p>
+    </div>
+    <div class="faq-wrap" id="faq-wrap">
+      <div class="faq-item reveal">
+        <div class="faq-q">What makes your teaching method unique and effective? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Our program combines correct Tajweed, strong memorization techniques, clear pronunciation, and a gentle, structured teaching style with regular parent updates.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do I have to know Arabic to join? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Not at all. We welcome both Arabic and non‑Arabic speaking students, starting from the basics if needed.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can I get a free trial before enrolling? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! We offer a free trial class so you can see our teaching style before enrolling.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="contact">
+  <div class="cta reveal">
+    <div class="cta-pattern"></div>
+    <h2>Start Your Qur'an Journey Today</h2>
+    <p>Give yourself and your family the gift of Qur'an knowledge — book a free trial and meet your teacher this week.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/201093925820" target="_blank" class="btn btn-white" id="cta-whatsapp">Enroll Now</a>
+      <a href="mailto:info@rattelayah.com" class="btn btn-outline" id="cta-email" style="border-color:rgba(255,255,255,.5); color:#fff;">Contact a Teacher</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="/assets/images/site/logo.png" alt="Rattel Ayah Logo" onerror="this.style.display='none'"></div>
+        <p id="footer-tagline">Cultivating young hearts into confident Muslims through quality online Qur'an, Arabic, and Islamic education — with certified native Arabic teachers.</p>
+        <div class="social-row" id="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/201093925820" target="_blank" aria-label="WhatsApp" id="footer-whatsapp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.34 4.94L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#courses">Qur'an Memorization</a></li>
+          <li><a href="#courses">Tajweed Course</a></li>
+          <li><a href="#courses">Arabic Language</a></li>
+          <li><a href="#courses">Islamic Studies</a></li>
+          <li><a href="#courses">Tafseer Classes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#teachers">Our Teachers</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-item">
+          <div class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.34 4.94L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg></div>
+          <div>Phone / WhatsApp<br><a href="https://wa.me/201093925820" id="footer-phone-link" style="color:#fff;">+20 10 9392 5820</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></div>
+          <div>Email<br><a href="mailto:info@rattelayah.com" id="footer-email-link" style="color:#fff;">info@rattelayah.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="text-align:center;padding:20px 0;color:rgba(255,255,255,.6);font-size:13px;">
+      © <span id="footer-year"></span> Rattel Ayah Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/supabase-config.js"></script>
+<script src="/Home/data-loader.js"></script>
+<script src="/Home/script.js"></script>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

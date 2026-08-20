@@ -3,7 +3,11 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/", "destination": "/Home/index.html" },
+    { "source": "/Home", "destination": "/Home/index.html" },
+    { "source": "/Home/", "destination": "/Home/index.html" },
     { "source": "/admin", "destination": "/Admin/admin.html" },
-    { "source": "/admin/", "destination": "/Admin/admin.html" }
+    { "source": "/admin/", "destination": "/Admin/admin.html" },
+    { "source": "/Admin", "destination": "/Admin/admin.html" },
+    { "source": "/Admin/", "destination": "/Admin/admin.html" }
   ]
 }
